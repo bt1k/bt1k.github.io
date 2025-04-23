@@ -34,6 +34,46 @@ h1 {
   gap: 1rem;
 }
 
+#ruby {
+  background-color: #990000;
+  color: white;
+}
+
+#rails {
+  background-color: #d30001;
+  color: white;
+}
+
+#javascript {
+  background-color: #f7df1e;
+  color: black;
+}
+
+#nodejs {
+  background-color: #689f63;
+  color: white;
+}
+
+#preact {
+  background-color: #673ab8;
+  color: white;
+}
+
+#go {
+  background-color: #00acd7;
+  color: white;
+}
+
+#typescript {
+  background-color: #3178c6;
+  color: white;
+}
+
+#reactnative {
+  background-color: #61dafb;
+  color: black;
+}
+
 .project {
   background-color: lightgrey;
   flex: 1;
