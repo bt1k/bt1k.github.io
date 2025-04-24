@@ -18,7 +18,8 @@
           <span id="ruby">Ruby</span>
           <span id="rails">Rails</span>
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris justo nisl, eleifend ac interdum eu, viverra eget neque. Aliquam dictum sapien ut augue ultrices, eu consectetur mi cursus. Vivamus non orci eu est iaculis ornare. Mauris ac tempus nisl. Curabitur blandit orci risus, cursus accumsan libero rutrum non. Nunc tempor lorem velit, sit amet sollicitudin enim hendrerit id. Aliquam elementum aliquam ultrices. Maecenas sit amet lorem cursus, lacinia lorem vitae, iaculis enim. Cras fermentum vestibulum nunc et laoreet. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+        <p>This is a basic blog website made with Ruby on Rails. It features the Trix WYSIWYG text editor for writing rich text blog posts. The site features user accounts for different authors of blog posts.</p>
+        <p>This website is running on Render, and it has a Postgres database hosted by Neon. Images uploaded to this website are hosted on Cloudinary.</p>
       </section>
       <section class="project">
         <h2>PostBoard</h2>
@@ -27,7 +28,8 @@
           <span id="nodejs">Node.js</span>
           <span id="preact">Preact</span>
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices lectus nulla, a pulvinar sapien elementum quis. Suspendisse neque lectus, eleifend id iaculis non, aliquet id ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam condimentum, enim in rhoncus interdum, dui mi finibus turpis, et cursus elit turpis rutrum lorem. Aenean placerat, erat nec malesuada ullamcorper, eros nibh facilisis ante, ut aliquam augue ex eu ipsum. Nam in aliquet ante. Maecenas eget mi ultrices, pulvinar nulla et, posuere ex. Integer hendrerit diam eget nisl maximus, id molestie mauris rutrum. Maecenas ultrices turpis ut leo dapibus lacinia. Mauris lacinia faucibus leo sit amet tempor. Nam consequat dolor id mauris fermentum iaculis. Curabitur venenatis erat eu lacus placerat, a auctor lacus congue.</p>
+        <p>PostBoard is a full-stack JavaScript web app. It's a simple website that allows people to leave posts (text messages). A CAPTCHA (provided by hCaptcha) is used as an attempt to prevent bot activity. Also, Google's AI API is used by the back-end as an attempt to prevent offensive posts. When a user submits a post, a request is sent to Google's API asking if the post is offensive. The post is saved if the API says that the post is not offensive.</p>
+        <p>The front-end uses the Preact framework (which is very similar to React), while the back-end uses Node.js with the Express framework.</p>
       </section>
       <section class="project">
         <h2>Messenger</h2>
@@ -36,7 +38,9 @@
           <span id="typescript">TypeScript</span>
           <span id="reactnative">React Native</span>
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices pharetra mauris, id imperdiet arcu interdum nec. Fusce vehicula enim at tellus ultricies, sit amet lacinia tellus rhoncus. Fusce hendrerit velit est. Mauris bibendum elementum iaculis. Aenean ut feugiat est. Vivamus sollicitudin gravida lectus vitae euismod. Aliquam ut sem laoreet, sagittis dui tempor, volutpat urna.</p>
+        <p>Messenger is a React Native app, written in TypeScript, with a back-end written in Go.</p>
+        <p>At the moment, Messenger's functionality is very basic. It allows the user to send messages to the back-end, and the back-end replies with a very basic response.</p>
+        <p>Communication takes place with a WebSocket. If the WebSocket disconnects, the front-end will attempt to open a new WebSocket connection every 3 seconds until a new connection succeeds.</p>
       </section>
     </main>
   </body>
