@@ -10,9 +10,10 @@
     <header id="jumbotron">
       <h1>bt</h1>
       <p>Web developer</p>
+      <p><a href="https://github.com/bt1k" target="_blank">github.com/bt1k</a></p>
     </header>
     <aside id="note">
-      <p>NB: These websites can each take <b>around 1 minute to load</b>. I am using free hosting which puts each web app to sleep when inactive.</p>
+      <p>NB: The websites below can each take <b>around 1 minute to load</b>. I am using free hosting which puts each web app to sleep when inactive.</p>
     </aside>
     <main id="projects">
       <section class="project">
@@ -46,5 +47,10 @@
         <p>If the WebSocket disconnects, the front-end will attempt to open a new WebSocket connection every 3 seconds until a new connection succeeds.</p>
       </section>
     </main>
+    <p>&copy; <span id="year">(Current year)</span> BT</p>
+    <script>
+      const d = new Date();
+      year.textContent = d.getFullYear();
+    </script>
   </body>
 </html>
