@@ -9,11 +9,24 @@
   <body>
     <header id="jumbotron">
       <h1>bt</h1>
+      <p>Web developer</p>
     </header>
-    <p>Here are some websites I've made:</p>
+    <aside id="note">
+      <p>NB: These websites can each take <b>around 1 minute to load</b>. I am using free hosting which puts each web app to sleep when inactive.</p>
+    </aside>
     <main id="projects">
       <section class="project">
-        <h2>New Rails Blog</h2>
+        <h2><a href="https://thepostboard.pages.dev/" target="_blank">PostBoard</a></h2>
+        <p class="techTags">
+          <span id="javascript">JavaScript</span>
+          <span id="nodejs">Node.js</span>
+          <span id="preact">Preact</span>
+        </p>
+        <p>PostBoard is a web app using Node.js on the back-end, and Preact on the front-end (which is very similar to React).</p>
+        <p>It's a simple website that allows people to leave posts (text messages). A CAPTCHA (provided by hCaptcha) is used as an attempt to prevent bot activity. Also, Google's AI API is used by the back-end as an attempt to prevent offensive posts. When a user submits a post, a request is sent to Google's API asking if the post is offensive. The post is saved if the API says that the post is not offensive.</p>
+      </section>
+      <section class="project">
+        <h2><a href="https://new-rails-blog.onrender.com/" target="_blank">New Rails Blog</a></h2>
         <p class="techTags">
           <span id="ruby">Ruby</span>
           <span id="rails">Rails</span>
@@ -22,25 +35,15 @@
         <p>This website is running on Render, and it has a Postgres database hosted by Neon. Images uploaded to this website are hosted on Cloudinary.</p>
       </section>
       <section class="project">
-        <h2>PostBoard</h2>
-        <p class="techTags">
-          <span id="javascript">JavaScript</span>
-          <span id="nodejs">Node.js</span>
-          <span id="preact">Preact</span>
-        </p>
-        <p>PostBoard is a full-stack JavaScript web app. It's a simple website that allows people to leave posts (text messages). A CAPTCHA (provided by hCaptcha) is used as an attempt to prevent bot activity. Also, Google's AI API is used by the back-end as an attempt to prevent offensive posts. When a user submits a post, a request is sent to Google's API asking if the post is offensive. The post is saved if the API says that the post is not offensive.</p>
-        <p>The front-end uses the Preact framework (which is very similar to React), while the back-end uses Node.js with the Express framework.</p>
-      </section>
-      <section class="project">
-        <h2>Messenger</h2>
+        <h2><a href="https://btwsmessenger.onrender.com/" target="_blank">Messenger</a></h2>
         <p class="techTags">
           <span id="go">Go</span>
           <span id="typescript">TypeScript</span>
           <span id="reactnative">React Native</span>
         </p>
-        <p>Messenger is a React Native app, written in TypeScript, with a back-end written in Go.</p>
-        <p>At the moment, Messenger's functionality is very basic. It allows the user to send messages to the back-end, and the back-end replies with a very basic response.</p>
-        <p>Communication takes place with a WebSocket. If the WebSocket disconnects, the front-end will attempt to open a new WebSocket connection every 3 seconds until a new connection succeeds.</p>
+        <p>This is just a simple tech demo at the moment. It's a React Native app, written in TypeScript, with a back-end written in Go.</p>
+        <p>It allows you to send messages over a WebSocket to the server. Each message is sent back to the user who sent it. These messages are not saved.</p>
+        <p>If the WebSocket disconnects, the front-end will attempt to open a new WebSocket connection every 3 seconds until a new connection succeeds.</p>
       </section>
     </main>
   </body>
