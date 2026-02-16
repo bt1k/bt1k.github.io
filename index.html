@@ -10,44 +10,61 @@
     <header id="jumbotron">
       <h1>bt</h1>
       <p>Web developer</p>
-      <p><a href="https://github.com/bt1k" target="_blank">github.com/bt1k</a></p>
+      <p><a href="https://github.com/bt1k" target="_blank">github.com/<wbr>bt1k</a></p>
     </header>
-    <aside id="note">
-      <p>NB: The websites below can each take <b>around 1 minute to load</b>. I am using free hosting which puts each web app to sleep when inactive.</p>
-    </aside>
-    <main id="projects">
-      <section class="project">
-        <h2><a href="https://thepostboard.pages.dev/" target="_blank">PostBoard</a></h2>
-        <p class="techTags">
-          <span id="javascript">JavaScript</span>
-          <span id="nodejs">Node.js</span>
-          <span id="preact">Preact</span>
-        </p>
-        <p>PostBoard is a web app using Node.js on the back-end, and Preact on the front-end (which is very similar to React).</p>
-        <p>It's a simple website that allows people to leave posts (text messages). A CAPTCHA (provided by hCaptcha) is used as an attempt to prevent bot activity. Also, Google's AI API is used by the back-end as an attempt to prevent offensive posts. When a user submits a post, a request is sent to Google's API asking if the post is offensive. The post is saved if the API says that the post is not offensive.</p>
+    <main>
+      <section class="projectsSection" id="recentProjects">
+        <div id="recentProjectsInfo">
+          <h2>Recent project</h2>
+          <p>This project is running on a <a href="https://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">VPS</a> as a systemd service on top of Debian GNU/Linux.</p>
+        </div>
+        <section class="project">
+          <h3><a href="https://emojiboard.bt1k.co.uk" target="_blank">EmojiBoard</a></h3>
+          <p>Code: <a href="https://github.com/bt1k/emojiboard" target="_blank">github.com/bt1k/emojiboard</a></p>
+          <p class="techTags">
+            <a href="https://react.dev" target="_blank">
+              <span class="tagReact">React</span>
+            </a>
+            <a href="https://www.typescriptlang.org" target="_blank">
+              <span class="tagTypeScript">TypeScript</span>
+            </a>
+            <a href="https://go.dev" target="_blank">
+              <span class="tagGo">Go</span>
+            </a>
+          </p>
+          <p>EmojiBoard is a very simple website which allows you to submit emojis for others to see. Submitted emojis are stored in a PostgreSQL database. Features include:</p>
+          <ul>
+            <li>Rate limiting to reduce server load in the event of many requests.</li>
+            <li>Database check constraint to ensure only certain emojis can be submitted.</li>
+            <li>Database trigger function to ensure that a maximum of 10 emoji posts are in the database at any time (to prevent unlimited growth of database size).</li>
+          </ul>
+        </section>
       </section>
-      <section class="project">
-        <h2><a href="https://new-rails-blog.onrender.com/" target="_blank">New Rails Blog</a></h2>
-        <p class="techTags">
-          <span id="ruby">Ruby</span>
-          <span id="rails">Rails</span>
-        </p>
-        <p>This is a basic blog website made with Ruby on Rails. It features the Trix WYSIWYG text editor for writing rich text blog posts. The site features user accounts for different authors of blog posts.</p>
-        <p>This website is running on Render, and it has a Postgres database hosted by Neon. Images uploaded to this website are hosted on Cloudinary.</p>
-      </section>
-      <section class="project">
-        <h2><a href="https://btwsmessenger.onrender.com/" target="_blank">Messenger</a></h2>
-        <p class="techTags">
-          <span id="go">Go</span>
-          <span id="typescript">TypeScript</span>
-          <span id="reactnative">React Native</span>
-        </p>
-        <p>This is just a simple tech demo at the moment. It's a React Native app, written in TypeScript, with a back-end written in Go.</p>
-        <p>It allows you to send messages over a WebSocket to the server. Each message is sent back to the user who sent it. These messages are not saved.</p>
-        <p>If the WebSocket disconnects, the front-end will attempt to open a new WebSocket connection every 3 seconds until a new connection succeeds.</p>
+      <section class="projectsSection" id="otherProjects">
+        <h2>Other projects</h2>
+        <aside id="note">
+          <p>The website below can take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
+        </aside>
+        <section class="project">
+          <h3><a href="https://new-rails-blog.onrender.com" target="_blank">New Rails Blog</a></h3>
+          <p class="techTags">
+            <a href="https://www.ruby-lang.org/en" target="_blank">
+              <span class="tagRuby">Ruby</span>
+            </a>
+            <a href="https://rubyonrails.org" target="_blank">
+              <span class="tagRails">Rails</span>
+            </a>
+          </p>
+          <p>New Rails Blog is a simple blog website. Features include:</p>
+          <ul>
+            <li>The <a href="https://trix-editor.org" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
+            <li>User authentication, which is required to submit a blog post.</li>
+            <li>A serverless PostgreSQL database hosted by <a href="https://neon.com" target="_blank">Neon</a>, while images (submitted within blog posts) are hosted by <a href="https://cloudinary.com" target="_blank">Cloudinary</a>.</li>
+          </ul>
+        </section>
       </section>
     </main>
-    <p>&copy; <span id="year">(Current year)</span> BT</p>
+    <p id="copyrightText">&copy; <span id="year">(Current year)</span> BT</p>
     <script>
       const d = new Date();
       year.textContent = d.getFullYear();

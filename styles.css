@@ -8,7 +8,14 @@
   font-size: 16px;
 }
 
+a:hover {
+  filter: brightness(3);
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin: auto;
   max-width: 80rem;
   padding: 1rem;
@@ -16,6 +23,24 @@ body {
 
 h1 {
   font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#copyrightText {
+  text-align: center;
 }
 
 #jumbotron {
@@ -27,6 +52,10 @@ h1 {
   padding: 2rem;
 }
 
+#jumbotron a {
+  color: deepskyblue;
+}
+
 #jumbotron h1 {
   margin: 0;
 }
@@ -36,71 +65,103 @@ h1 {
   margin: 0;
 }
 
-#jumbotron a {
-  color: deepskyblue;
+#note {
+  background-color: yellow;
+  color: black;
+  padding: 1rem;
 }
 
-#note {
-  background-color: darkred;
-  color: white;
-  margin: 1rem 0;
-  padding: 1rem;
+#note a {
+  color: darkblue;
 }
 
 #note p {
   margin: 0;
 }
 
-#projects {
+#otherProjects {
+  background-color: darkblue;
+  color: white;
+}
+
+#recentProjects {
+  align-items: flex-start;
+  background-color: darkred;
+  color: white;
+  flex-direction: column;
+}
+
+#recentProjects > * {
+  flex: 1;
+}
+
+#recentProjectsInfo {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-#ruby {
-  background-color: #990000;
-  color: white;
-}
-
-#rails {
-  background-color: #d30001;
-  color: white;
-}
-
-#javascript {
-  background-color: #f7df1e;
-  color: black;
-}
-
-#nodejs {
-  background-color: #689f63;
-  color: white;
-}
-
-#preact {
-  background-color: #673ab8;
-  color: white;
-}
-
-#go {
-  background-color: #00acd7;
-  color: white;
-}
-
-#typescript {
-  background-color: #3178c6;
-  color: white;
-}
-
-#reactnative {
-  background-color: #61dafb;
-  color: black;
+#recentProjectsInfo > * {
+  margin: 0;
 }
 
 .project {
   background-color: lightgrey;
+  color: black;
+  display: flex;
   flex: 1;
-  padding: 0 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.project > * {
+  margin: 0;
+}
+
+.projectsSection {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.projectsSection > * {
+  margin: 0;
+}
+
+.projectsSection a {
+  color: deepskyblue;
+}
+
+.projectsSection .project a {
+  color: darkblue;
+}
+
+.tagGo {
+  background-color: #00acd7;
+  color: white;
+}
+
+.tagRails {
+  background-color: #d30001;
+  color: white;
+}
+
+.tagReact {
+  background-color: #61dafb;
+  color: black;
+}
+
+.tagRuby {
+  background-color: #990000;
+  color: white;
+}
+
+.tagTypeScript {
+  background-color: #3178c6;
+  color: white;
 }
 
 .techTags {
@@ -109,14 +170,23 @@ h1 {
   gap: 1rem;
 }
 
+.techTags a {
+  text-decoration: none;
+}
+
+.techTags a:hover {
+  filter: brightness(1.5);
+}
+
 .techTags span {
-  background-color: white;
+  display: block;
   font-weight: bold;
   padding: 0.5rem;
 }
 
 @media (min-width: 62.5rem) {
-  #projects {
+  #recentProjects {
+    align-items: center;
     flex-direction: row;
   }
 }
