@@ -43,6 +43,13 @@ main {
   text-align: center;
 }
 
+#featuredProjects {
+  align-items: flex-start;
+  background-color: darkred;
+  color: white;
+  flex-direction: column;
+}
+
 #jumbotron {
   background-color: black;
   color: white;
@@ -84,29 +91,8 @@ main {
   color: white;
 }
 
-#recentProjects {
-  align-items: flex-start;
-  background-color: darkred;
-  color: white;
-  flex-direction: column;
-}
-
-#recentProjects > * {
-  flex: 1;
-}
-
-#recentProjectsInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#recentProjectsInfo > * {
-  margin: 0;
-}
-
 .project {
-  background-color: lightgrey;
+  background-color: #ddd;
   color: black;
   display: flex;
   flex: 1;
@@ -117,6 +103,13 @@ main {
 
 .project > * {
   margin: 0;
+}
+
+.projectsContainer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .projectsSection {
@@ -141,6 +134,21 @@ main {
 
 .tagGo {
   background-color: #00acd7;
+  color: white;
+}
+
+.tagJavaScript {
+  background-color: #f7df1e;
+  color: black;
+}
+
+.tagNodeJs {
+  background-color: #417e38;
+  color: white;
+}
+
+.tagPreact {
+  background-color: #673ab8;
   color: white;
 }
 
@@ -175,7 +183,7 @@ main {
 }
 
 .techTags a:hover {
-  filter: brightness(1.5);
+  filter: brightness(0.75);
 }
 
 .techTags span {
@@ -185,8 +193,7 @@ main {
 }
 
 @media (min-width: 62.5rem) {
-  #recentProjects {
-    align-items: center;
+  .projectsContainer {
     flex-direction: row;
   }
 }

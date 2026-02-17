@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,55 +13,98 @@
       <p><a href="https://github.com/bt1k" target="_blank">github.com/<wbr>bt1k</a></p>
     </header>
     <main>
-      <section class="projectsSection" id="recentProjects">
-        <div id="recentProjectsInfo">
-          <h2>Recent project</h2>
-          <p>This project is running on a <a href="https://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">VPS</a> as a systemd service on top of Debian GNU/Linux.</p>
+      <section class="projectsSection" id="featuredProjects">
+        <h2>Featured project</h2>
+        <p>This project is running on a <a href="https://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">VPS</a> as a systemd service on top of Debian GNU/Linux.</p>
+        <div class="projectsContainer">
+          <section class="project">
+            <h3><a href="https://emojiboard.bt1k.co.uk" target="_blank">EmojiBoard</a></h3>
+            <p>Code: <a href="https://github.com/bt1k/emojiboard" target="_blank">github.com/bt1k/emojiboard</a></p>
+            <p class="techTags">
+              <a href="https://react.dev" target="_blank">
+                <span class="tagReact">React</span>
+              </a>
+              <a href="https://www.typescriptlang.org" target="_blank">
+                <span class="tagTypeScript">TypeScript</span>
+              </a>
+              <a href="https://go.dev" target="_blank">
+                <span class="tagGo">Go</span>
+              </a>
+            </p>
+            <p>EmojiBoard is a very simple website which allows you to submit emojis for others to see. Submitted emojis are stored in a PostgreSQL database. Features include:</p>
+            <ul>
+              <li>Rate limiting to reduce server load in the event of many requests.</li>
+              <li>Database check constraint to ensure only certain emojis can be submitted.</li>
+              <li>Database trigger function to ensure that a maximum of 10 emoji posts are in the database at any time (to prevent unlimited growth of database size).</li>
+            </ul>
+          </section>
         </div>
-        <section class="project">
-          <h3><a href="https://emojiboard.bt1k.co.uk" target="_blank">EmojiBoard</a></h3>
-          <p>Code: <a href="https://github.com/bt1k/emojiboard" target="_blank">github.com/bt1k/emojiboard</a></p>
-          <p class="techTags">
-            <a href="https://react.dev" target="_blank">
-              <span class="tagReact">React</span>
-            </a>
-            <a href="https://www.typescriptlang.org" target="_blank">
-              <span class="tagTypeScript">TypeScript</span>
-            </a>
-            <a href="https://go.dev" target="_blank">
-              <span class="tagGo">Go</span>
-            </a>
-          </p>
-          <p>EmojiBoard is a very simple website which allows you to submit emojis for others to see. Submitted emojis are stored in a PostgreSQL database. Features include:</p>
-          <ul>
-            <li>Rate limiting to reduce server load in the event of many requests.</li>
-            <li>Database check constraint to ensure only certain emojis can be submitted.</li>
-            <li>Database trigger function to ensure that a maximum of 10 emoji posts are in the database at any time (to prevent unlimited growth of database size).</li>
-          </ul>
-        </section>
       </section>
       <section class="projectsSection" id="otherProjects">
         <h2>Other projects</h2>
         <aside id="note">
-          <p>The website below can take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
+          <p>The websites below can each take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
         </aside>
-        <section class="project">
-          <h3><a href="https://new-rails-blog.onrender.com" target="_blank">New Rails Blog</a></h3>
-          <p class="techTags">
-            <a href="https://www.ruby-lang.org/en" target="_blank">
-              <span class="tagRuby">Ruby</span>
-            </a>
-            <a href="https://rubyonrails.org" target="_blank">
-              <span class="tagRails">Rails</span>
-            </a>
-          </p>
-          <p>New Rails Blog is a simple blog website. Features include:</p>
-          <ul>
-            <li>The <a href="https://trix-editor.org" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
-            <li>User authentication, which is required to submit a blog post.</li>
-            <li>A serverless PostgreSQL database hosted by <a href="https://neon.com" target="_blank">Neon</a>, while images (submitted within blog posts) are hosted by <a href="https://cloudinary.com" target="_blank">Cloudinary</a>.</li>
-          </ul>
-        </section>
+        <div class="projectsContainer">
+          <section class="project">
+            <h3><a href="https://new-rails-blog.onrender.com" target="_blank">New Rails Blog</a></h3>
+            <p class="techTags">
+              <a href="https://www.ruby-lang.org/en" target="_blank">
+                <span class="tagRuby">Ruby</span>
+              </a>
+              <a href="https://rubyonrails.org" target="_blank">
+                <span class="tagRails">Rails</span>
+              </a>
+            </p>
+            <p>New Rails Blog is a simple blog website. Features include:</p>
+            <ul>
+              <li>The <a href="https://trix-editor.org" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
+              <li>User authentication, which is required to submit a blog post.</li>
+              <li>A serverless PostgreSQL database hosted by <a href="https://neon.com" target="_blank">Neon</a>, while images (submitted within blog posts) are hosted by <a href="https://cloudinary.com" target="_blank">Cloudinary</a>.</li>
+            </ul>
+            <p>The reason for "new" in the name is because I made this website to replace a previous inferior blog website which I also made with Rails.</p>
+          </section>
+          <section class="project">
+            <h3><a href="https://thepostboard.pages.dev" target="_blank">PostBoard</a></h3>
+            <p class="techTags">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+                <span class="tagJavaScript">JavaScript</span>
+              </a>
+              <a href="https://nodejs.org/en" target="_blank">
+                <span class="tagNodeJs">Node.js</span>
+              </a>
+              <a href="https://preactjs.com" target="_blank">
+                <span class="tagPreact">Preact</span>
+              </a>
+            </p>
+            <p>PostBoard is similar to EmojiBoard above. Instead of submitting only emojis, you can submit text messages, which are automatically moderated by <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google's Gemini AI assistant</a>. Features include:</p>
+            <ul>
+              <li>Google's Gemini API is asked, with a suitable prompt, whether each submitted text message is offensive. If a message is offensive, it is not saved into the database.</li>
+              <li>Unlike EmojiBoard above which has a back-end written in Go, PostBoard has a back-end written using Node.js, the web framework <a href="https://expressjs.com" target="_blank">Express</a>, and the <a href="https://www.prisma.io/orm" target="_blank">Prisma ORM</a>.</li>
+              <li>Instead of using React on the front-end, Preact is used. Preact is a lightweight alternative to React, but the developer experience is nearly identical.</li>
+            </ul>
+          </section>
+          <section class="project">
+            <h3><a href="https://btwsmessenger.onrender.com" target="_blank">Messenger</a></h3>
+            <p class="techTags">
+              <a href="https://reactnative.dev" target="_blank">
+                <span class="tagReact">React Native</span>
+              </a>
+              <a href="https://www.typescriptlang.org" target="_blank">
+                <span class="tagTypeScript">TypeScript</span>
+              </a>
+              <a href="https://go.dev" target="_blank">
+                <span class="tagGo">Go</span>
+              </a>
+            </p>
+            <p>Messenger is a simple tech demo using <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank">WebSockets</a> and React Native. Features include:</p>
+            <ul>
+              <li>The front-end uses a WebSocket for sustained bidirectional communication between the user's device and the server.</li>
+              <li>React Native is used so that the same codebase can be used to produce a website, a native iOS app, and a native Android app.</li>
+              <li>Unlike the other projects on this page, Messenger does not use a database. Messages are not persisted at all; the server simply sends a received message back to the client.</li>
+            </ul>
+          </section>
+        </div>
       </section>
     </main>
     <p id="copyrightText">&copy; <span id="year">(Current year)</span> BT</p>
