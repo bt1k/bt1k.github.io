@@ -107,9 +107,9 @@ main {
 
 .projectsContainer {
   align-self: stretch;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 .projectsSection {
@@ -142,8 +142,18 @@ main {
   color: black;
 }
 
+.tagLaravel {
+  background-color: #f53003;
+  color: white;
+}
+
 .tagNodeJs {
   background-color: #417e38;
+  color: white;
+}
+
+.tagPhp {
+  background-color: #4f5b93;
   color: white;
 }
 
@@ -187,13 +197,14 @@ main {
 }
 
 .techTags span {
+  border: 1px solid #333;
   display: block;
   font-weight: bold;
   padding: 0.5rem;
 }
 
-@media (min-width: 62.5rem) {
-  .projectsContainer {
-    flex-direction: row;
+@media (min-width: 60rem) {
+  .projectsContainer:has(> :nth-child(2)) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -47,22 +47,21 @@
         </aside>
         <div class="projectsContainer">
           <section class="project">
-            <h3><a href="https://new-rails-blog.onrender.com" target="_blank">New Rails Blog</a></h3>
+            <h3><a href="https://bt-laravel-test.onrender.com" target="_blank">Laravel Test</a></h3>
             <p class="techTags">
-              <a href="https://www.ruby-lang.org/en" target="_blank">
-                <span class="tagRuby">Ruby</span>
+              <a href="https://www.php.net" target="_blank">
+                <span class="tagPhp">PHP</span>
               </a>
-              <a href="https://rubyonrails.org" target="_blank">
-                <span class="tagRails">Rails</span>
+              <a href="https://laravel.com" target="_blank">
+                <span class="tagLaravel">Laravel</span>
               </a>
             </p>
-            <p>New Rails Blog is a simple blog website. Features include:</p>
+            <p>Laravel Test is a basic website I made to improve my knowledge of PHP and Laravel. It uses a PostgreSQL database. Features include:</p>
             <ul>
-              <li>The <a href="https://trix-editor.org" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
-              <li>User authentication, which is required to submit a blog post.</li>
-              <li>A serverless PostgreSQL database hosted by <a href="https://neon.com" target="_blank">Neon</a>, while images (submitted within blog posts) are hosted by <a href="https://cloudinary.com" target="_blank">Cloudinary</a>.</li>
+              <li>Docker is used for deployment.</li>
+              <li>Validates data on the back-end, so that only certain text inputs will be saved into the database.</li>
+              <li>Uses front-end JavaScript to submit an HTTP DELETE request when a button is clicked to delete a post.</li>
             </ul>
-            <p>The reason for "new" in the name is because I made this website to replace a previous inferior blog website which I also made with Rails.</p>
           </section>
           <section class="project">
             <h3><a href="https://thepostboard.pages.dev" target="_blank">PostBoard</a></h3>
@@ -77,12 +76,30 @@
                 <span class="tagPreact">Preact</span>
               </a>
             </p>
-            <p>PostBoard is similar to EmojiBoard above. Instead of submitting only emojis, you can submit text messages, which are automatically moderated by <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google's Gemini AI assistant</a>. Features include:</p>
+            <p>PostBoard is similar to EmojiBoard above, but instead of submitting only emojis, you can submit text messages. Features include:</p>
             <ul>
-              <li>Google's Gemini API is asked, with a suitable prompt, whether each submitted text message is offensive. If a message is offensive, it is not saved into the database.</li>
-              <li>Unlike EmojiBoard above which has a back-end written in Go, PostBoard has a back-end written using Node.js, the web framework <a href="https://expressjs.com" target="_blank">Express</a>, and the <a href="https://www.prisma.io/orm" target="_blank">Prisma ORM</a>.</li>
-              <li>Instead of using React on the front-end, Preact is used. Preact is a lightweight alternative to React, but the developer experience is nearly identical.</li>
+              <li><a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google's Gemini artificial intelligence API</a> is asked, with a suitable prompt, whether each submitted text message is offensive. Offensive messages are not saved.</li>
+              <li>Back-end written with Node.js, the web framework <a href="https://expressjs.com" target="_blank">Express</a>, and the <a href="https://www.prisma.io/orm" target="_blank">Prisma ORM</a>.</li>
+              <li>Preact is used on the front-end. It's a lightweight alternative to React, but the developer experience is nearly identical.</li>
             </ul>
+          </section>
+          <section class="project">
+            <h3><a href="https://new-rails-blog.onrender.com" target="_blank">New Rails Blog</a></h3>
+            <p class="techTags">
+              <a href="https://www.ruby-lang.org/en" target="_blank">
+                <span class="tagRuby">Ruby</span>
+              </a>
+              <a href="https://rubyonrails.org" target="_blank">
+                <span class="tagRails">Rails</span>
+              </a>
+            </p>
+            <p>New Rails Blog is a simple blog website made with Ruby on Rails and a PostgreSQL database. Features include:</p>
+            <ul>
+              <li>The <a href="https://trix-editor.org" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
+              <li>User authentication, which is required to submit a blog post.</li>
+              <li>Integration with <a href="https://cloudinary.com" target="_blank">Cloudinary</a> to host images submitted within blog posts.</li>
+            </ul>
+            <p>The reason for "new" in the name is because I made this website to replace a previous inferior blog website which I also made with Rails.</p>
           </section>
           <section class="project">
             <h3><a href="https://btwsmessenger.onrender.com" target="_blank">Messenger</a></h3>
