@@ -4,8 +4,24 @@
 }
 
 :root {
+  --site-max-width: 80rem;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+}
+
+::backdrop {
+  background-color: black;
+  /*
+    The negative margin is a bit of a hack. Without the negative margin, if you
+    scroll down the page in Chrome on Android while a modal <dialog> is open,
+    the URL bar at the bottom of the screen moves out of view, but the backdrop
+    only goes up to where the URL bar used to be. So you see a gap below the
+    backdrop, where is there no backdrop, in the space formerly occupied by the
+    URL bar. The negative margin makes the backdrop extend beyond the viewport,
+    and thus the gap I described is not visible.
+  */
+  margin: -10rem;
+  opacity: 0.5;
 }
 
 a:hover {
@@ -17,8 +33,45 @@ body {
   flex-direction: column;
   gap: 1rem;
   margin: auto;
-  max-width: 80rem;
+  max-width: var(--site-max-width);
   padding: 1rem;
+}
+
+button {
+  align-self: stretch;
+  background-color: black;
+  border: 0;
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+button:hover, .techTags a:hover {
+  filter: brightness(0.75);
+}
+
+dialog[open] {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: calc(100dvh - 6rem);
+  margin: auto;
+  max-height: 40rem;
+  max-width: calc(var(--site-max-width) - 6rem);
+  padding: 1rem;
+  width: calc(100dvw - 6rem);
+}
+
+dialog[open] > * {
+  margin: 0;
 }
 
 h1 {
@@ -60,7 +113,7 @@ main {
 }
 
 #jumbotron a {
-  color: skyblue;
+  color: aquamarine;
 }
 
 #jumbotron h1 {
@@ -95,7 +148,6 @@ main {
   background-color: #ddd;
   color: black;
   display: flex;
-  flex: 1;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
@@ -125,7 +177,7 @@ main {
 }
 
 .projectsSection a {
-  color: skyblue;
+  color: aquamarine;
 }
 
 .projectsSection .project a {
@@ -190,10 +242,6 @@ main {
 
 .techTags a {
   text-decoration: none;
-}
-
-.techTags a:hover {
-  filter: brightness(0.75);
 }
 
 .techTags span {
