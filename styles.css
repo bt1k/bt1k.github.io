@@ -59,19 +59,12 @@ button:hover, .techTags a:hover {
 
 dialog[open] {
   border: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  height: calc(100dvh - 6rem);
+  height: calc(100dvh - 4rem);
   margin: auto;
   max-height: 40rem;
-  max-width: calc(var(--site-max-width) - 6rem);
-  padding: 1rem;
-  width: calc(100dvw - 6rem);
-}
-
-dialog[open] > * {
-  margin: 0;
+  max-width: calc(var(--site-max-width) - 4rem);
+  padding: 0;
+  width: calc(100dvw - 4rem);
 }
 
 h1 {
@@ -142,6 +135,44 @@ main {
 #otherProjects {
   background-color: darkblue;
   color: white;
+}
+
+.dialogBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.dialogBody > * {
+  margin: 0;
+}
+
+.dialogHeader {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.dialogHeader > * {
+  margin: 0;
+}
+
+.dialogHeader > button {
+  align-self: flex-start;
+  background-color: darkred;
+  font-size: 1.5rem;
+  line-height: 1rem;
+}
+
+.dialogHeader > h2 {
+  font-size: min(2rem, 7.5dvh);
 }
 
 .project {
