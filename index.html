@@ -10,108 +10,125 @@
     <header id="jumbotron">
       <h1>bt</h1>
       <p>Web/software developer</p>
-      <p><a href="https://github.com/bt1k" target="_blank">github.com/<wbr>bt1k</a></p>
+      <p><a href="https://github.com/bt1k" rel="noreferrer" target="_blank">github.com/<wbr>bt1k</a></p>
     </header>
     <main>
+      <aside class="note">
+        <p>The web applications mentioned on this page were made by me as learning exercises. They're not intended to be particularly useful to ordinary people.</p>
+      </aside>
       <section class="projectsSection" id="featuredProjects">
-        <h2>Featured projects</h2>
-        <p>The websites mentioned below are running on a VPS (virtual private server), using Debian GNU/Linux. More info about what a VPS is can be found from sources such as <a href="https://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">Wikipedia</a>, <a href="https://aws.amazon.com/what-is/vps" target="_blank">AWS</a>, and <a href="https://cloud.google.com/learn/what-is-a-virtual-private-server" target="_blank">Google Cloud</a>.</p>
-        <p>I'm using several measures to keep my VPS secure, including the unattended-upgrades package, which automatically installs security updates on a regular basis, and restarts the VPS in the early hours of the morning if required.</p>
-        <p>Using a VPS to run my web applications has taught me some valuable things about deploying and running web applications. I'm using systemd to run the binary of the EmojiBoard project below, and systemd is also used to run Nginx and FPM (FastCGI Process Manager) for the Laravel Test project below.</p>
+        <h2>VPS web applications</h2>
+        <p>I have deployed these two web applications on a VPS (virtual private server), which is running Debian GNU/Linux.</p>
+        <button id="vpsReadMore" class="dialogButton" disabled>Read more</button>
+        <dialog aria-labelledby="vpsDialogTitle" id="vpsDialog">
+          <header class="dialogHeader">
+            <h2 id="vpsDialogTitle">My VPS</h2>
+            <button aria-label="Close" autofocus id="vpsDialogClose">Close</button>
+          </header>
+          <div class="dialogBody">
+            <h3>What's a VPS?</h3>
+            <p>My understanding is that a VPS is a virtual machine, typically running on a server in a data centre. More info can be found from sources such as <a href="https://en.wikipedia.org/wiki/Virtual_private_server" rel="noreferrer" target="_blank">Wikipedia</a>, <a href="https://aws.amazon.com/what-is/vps" rel="noreferrer" target="_blank">AWS</a>, and <a href="https://cloud.google.com/learn/what-is-a-virtual-private-server" rel="noreferrer" target="_blank">Google Cloud</a>.</p>
+            <h3>Why a VPS?</h3>
+            <p>It was a lot cheaper than a PaaS such as Heroku or <a href="https://render.com" rel="noreferrer" target="_blank">Render</a>.</p>
+            <h3>Why Debian?</h3>
+            <p>I chose Debian for my VPS because I'm already familiar with Debian-based Linux distros, having used Debian and Ubuntu in my spare time. I think Debian's server edition is meant to be more lightweight than Ubuntu's server edition, and Ubuntu puts some packages in their "universe" repository, which requires Ubuntu Pro for proper security coverage. Debian just seemed easier, and recent Debian releases have each had 3 years of security updates (before the LTS period), which is enough for me. In fact, I've already upgraded my VPS from Debian 12 to Debian 13, and the upgrade seemed to work just fine.</p>
+            <h3>How is EmojiBoard being run?</h3>
+            <p>The EmojiBoard web application is a single binary, produced by Go's compiler, and it is running as a systemd service. The front-end files are embedded into the binary. If you look in EmojiBoard's <a href="https://github.com/bt1k/emojiboard" rel="noreferrer" target="_blank">repo</a>, at the file "extra_prod.go", you'll see the front-end files embedded in a variable named <code>clientFiles</code> (unless I've changed the code by the time you're reading this).</p>
+            <h3>How is Laravel Test being run?</h3>
+            <p>Laravel Test is being run with the FastCGI Process Manager (FPM) and Nginx.</p>
+            <h3>Is your VPS secure?</h3>
+            <p>I'm using several measures to keep the VPS secure:</p>
+            <ul>
+              <li>In the <a href="https://github.com/bt1k" rel="noreferrer" target="_blank">repos</a> of my VPS web applications are scripts which I use to check for dependency vulnerabilities (normally daily), and I upgrade dependencies if needed. I should set up Dependabot and GitHub Actions, but I haven't done this yet.</li>
+              <li>The unattended-upgrades package automatically installs security updates on a regular basis.</li>
+              <li>I'm using software to ban IP addresses from SSH logins after too many failed attempts, to make brute force attacks more difficult.</li>
+              <li>I'm using <a href="https://developers.cloudflare.com/tunnel" rel="noreferrer" target="_blank">Cloudflare Tunnel</a>, which means all web traffic between my VPS and users goes through Cloudflare, for DoS/DDoS protection. HTTP requests directly to my VPS's IP address, on standard ports, are blocked by a firewall.</li>
+            </ul>
+          </div>
+        </dialog>
         <div class="projectsContainer">
           <section class="project">
-            <h3><a href="https://emojiboard.bt1k.co.uk" target="_blank">EmojiBoard</a></h3>
-            <p>Code: <a href="https://github.com/bt1k/emojiboard" target="_blank">github.com/bt1k/emojiboard</a></p>
+            <h3><a href="https://emojiboard.bt1k.co.uk" rel="noreferrer" target="_blank">EmojiBoard</a></h3>
+            <p>Code: <a href="https://github.com/bt1k/emojiboard" rel="noreferrer" target="_blank">github.com/bt1k/emojiboard</a></p>
             <p class="techTags">
-              <a href="https://react.dev" target="_blank">
+              <a href="https://react.dev" rel="noreferrer" target="_blank">
                 <span class="tagReact">React</span>
               </a>
-              <a href="https://www.typescriptlang.org" target="_blank">
+              <a href="https://www.typescriptlang.org" rel="noreferrer" target="_blank">
                 <span class="tagTypeScript">TypeScript</span>
               </a>
-              <a href="https://go.dev" target="_blank">
+              <a href="https://go.dev" rel="noreferrer" target="_blank">
                 <span class="tagGo">Go</span>
               </a>
             </p>
-            <p>EmojiBoard is a very simple website which allows you to submit emojis for others to see. Submitted emojis are stored in a PostgreSQL database. Features include:</p>
+            <p>EmojiBoard allows users to submit emojis for others to see. Submitted emojis are stored in a PostgreSQL database. Features include:</p>
             <ul>
               <li>Rate limiting to reduce server load in the event of many requests.</li>
               <li>Database check constraint to ensure only certain emojis can be submitted.</li>
               <li>Database trigger function to ensure that a maximum of 10 emoji posts are in the database at any time (to prevent unlimited growth of database size).</li>
             </ul>
-            <dialog aria-labelledby="emojiboardDialogTitle" id="emojiboardDialog">
-              <header class="dialogHeader">
-                <h2 id="emojiboardDialogTitle">Emoji&shy;Board</h2>
-                <button aria-label="Close" autofocus id="emojiboardClose">×</button>
-              </header>
-              <div class="dialogBody">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan sodales leo, eget rutrum sapien eleifend non. Quisque posuere, nisl eu pellentesque laoreet, ligula mauris sagittis nibh, et semper diam lectus a dolor. Maecenas ex tortor, commodo id sagittis vitae, iaculis sed velit. Duis id enim ac urna vulputate ultrices. Duis eget rutrum risus, id porttitor felis. Integer tellus enim, dignissim eu pellentesque at, dapibus a enim. Maecenas aliquet dolor dapibus diam consequat, id laoreet ex maximus. Maecenas eu nunc et nibh consequat tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam semper bibendum porttitor. Nullam blandit velit nec massa vulputate accumsan. Nam eget elit leo.</p>
-                <p>Suspendisse at sem quis elit hendrerit egestas vitae eget eros. Vestibulum urna urna, tempus tristique justo in, imperdiet rhoncus nibh. Ut sed nulla augue. Cras quis mattis ipsum. Nam pharetra ipsum a lectus consectetur, et sollicitudin eros pretium. Nullam in tortor sit amet purus mattis laoreet. Mauris tincidunt tempor orci. Phasellus vitae odio vestibulum, venenatis lorem maximus, faucibus mi. Phasellus imperdiet dui in erat sollicitudin, et commodo dui aliquet. Nulla facilisi. In ullamcorper lectus magna, ac fermentum turpis pretium at. Aliquam ac lacinia leo. Maecenas sit amet sodales augue. Mauris fermentum varius ultrices.</p>
-              </div>
-            </dialog>
-            <button id="emojiboardReadMore" class="dialogButton" disabled>Read more</button>
           </section>
           <section class="project">
             <h3><a href="https://laraveltest.bt1k.co.uk" target="_blank">Laravel Test</a></h3>
-            <p>Code: <a href="https://github.com/bt1k/laravel-test" target="_blank">github.com/bt1k/laravel-test</a></p>
+            <p>Code: <a href="https://github.com/bt1k/laravel-test" rel="noreferrer" target="_blank">github.com/bt1k/laravel-test</a></p>
             <p class="techTags">
-              <a href="https://www.php.net" target="_blank">
+              <a href="https://www.php.net" rel="noreferrer" target="_blank">
                 <span class="tagPhp">PHP</span>
               </a>
-              <a href="https://laravel.com" target="_blank">
+              <a href="https://laravel.com" rel="noreferrer" target="_blank">
                 <span class="tagLaravel">Laravel</span>
               </a>
             </p>
-            <p>Laravel Test is a basic website I made to improve my knowledge of PHP and Laravel. It uses a PostgreSQL database. Features include:</p>
+            <p>Laravel Test allows users to submit short text messages, which are shown publicly. It uses a PostgreSQL database. Features include:</p>
             <ul>
-              <li>Validates data on the back-end, so that only certain text inputs will be saved into the database.</li>
-              <li>Uses front-end JavaScript to submit an HTTP DELETE request when a button is clicked to delete a post.</li>
-              <li>Deployed using Nginx and FPM (FastCGI Process Manager).</li>
+              <li>Data validation, so that only certain text inputs will be saved.</li>
+              <li>HTTP DELETE requests are sent to the back-end by buttons used to delete posts.</li>
+              <li>New posts can't be saved if at least 10 posts are already saved.</li>
             </ul>
           </section>
         </div>
       </section>
       <section class="projectsSection" id="otherProjects">
-        <h2>Other projects</h2>
-        <aside id="note">
-          <p>The websites below can each take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
+        <h2>Other web applications</h2>
+        <aside class="note">
+          <p>The two web applications below can each take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
         </aside>
         <div class="projectsContainer">
           <section class="project">
-            <h3><a href="https://new-rails-blog.onrender.com" target="_blank">New Rails Blog</a></h3>
+            <h3><a href="https://new-rails-blog.onrender.com" rel="noreferrer" target="_blank">New Rails Blog</a></h3>
             <p class="techTags">
-              <a href="https://www.ruby-lang.org/en" target="_blank">
+              <a href="https://www.ruby-lang.org/en" rel="noreferrer" target="_blank">
                 <span class="tagRuby">Ruby</span>
               </a>
-              <a href="https://rubyonrails.org" target="_blank">
+              <a href="https://rubyonrails.org" rel="noreferrer" target="_blank">
                 <span class="tagRails">Rails</span>
               </a>
             </p>
             <p>New Rails Blog is a simple blog website made with Ruby on Rails and a PostgreSQL database. Features include:</p>
             <ul>
-              <li>The <a href="https://trix-editor.org" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
+              <li>The <a href="https://trix-editor.org" rel="noreferrer" target="_blank">Trix WYSIWYG text editor</a> for writing rich text blog posts.</li>
               <li>User authentication, which is required to submit a blog post.</li>
-              <li>Integration with <a href="https://cloudinary.com" target="_blank">Cloudinary</a> to host images submitted within blog posts.</li>
+              <li>Integration with <a href="https://cloudinary.com" rel="noreferrer" target="_blank">Cloudinary</a> to host images submitted within blog posts.</li>
             </ul>
             <p>The reason for "new" in the name is because I made this website to replace a previous inferior blog website which I also made with Rails.</p>
           </section>
           <section class="project">
-            <h3><a href="https://thepostboard.pages.dev" target="_blank">PostBoard</a></h3>
+            <h3><a href="https://thepostboard.pages.dev" rel="noreferrer" target="_blank">PostBoard</a></h3>
             <p class="techTags">
-              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="noreferrer" target="_blank">
                 <span class="tagJavaScript">JavaScript</span>
               </a>
-              <a href="https://nodejs.org/en" target="_blank">
+              <a href="https://nodejs.org/en" rel="noreferrer" target="_blank">
                 <span class="tagNodeJs">Node.js</span>
               </a>
-              <a href="https://preactjs.com" target="_blank">
+              <a href="https://preactjs.com" rel="noreferrer" target="_blank">
                 <span class="tagPreact">Preact</span>
               </a>
             </p>
             <p>PostBoard is similar to EmojiBoard above, but instead of submitting only emojis, you can submit text messages. Features include:</p>
             <ul>
-              <li><a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google's Gemini artificial intelligence API</a> is asked, with a suitable prompt, whether each submitted text message is offensive. Offensive messages are not saved.</li>
-              <li>Back-end written with Node.js, the web framework <a href="https://expressjs.com" target="_blank">Express</a>, and the <a href="https://www.prisma.io/orm" target="_blank">Prisma ORM</a>.</li>
+              <li><a href="https://ai.google.dev/gemini-api/docs" rel="noreferrer" target="_blank">Google's Gemini artificial intelligence API</a> is asked, with a suitable prompt, whether each submitted text message is offensive. Offensive messages are not saved.</li>
+              <li>Back-end written with Node.js, the web framework <a href="https://expressjs.com" rel="noreferrer" target="_blank">Express</a>, and the <a href="https://www.prisma.io/orm" rel="noreferrer" target="_blank">Prisma ORM</a>.</li>
               <li>Preact is used on the front-end. It's a lightweight alternative to React, but the developer experience is nearly identical.</li>
             </ul>
           </section>
@@ -123,9 +140,9 @@
       const d = new Date();
       year.textContent = d.getFullYear();
 
-      emojiboardClose.onclick = () => emojiboardDialog.close();
-      emojiboardReadMore.onclick = () => emojiboardDialog.showModal();
-      emojiboardReadMore.disabled = false;
+      vpsDialogClose.onclick = () => vpsDialog.close();
+      vpsReadMore.onclick = () => vpsDialog.showModal();
+      vpsReadMore.disabled = false;
     </script>
   </body>
 </html>
