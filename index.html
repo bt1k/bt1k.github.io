@@ -14,7 +14,7 @@
     </header>
     <main>
       <aside class="note">
-        <p>The web applications mentioned on this page were made by me as learning exercises. They're not intended to be particularly useful to ordinary people.</p>
+        <p>All web applications mentioned on this page were made by me as learning exercises. They're not intended to be particularly useful to ordinary people.</p>
       </aside>
       <section class="projectsSection" id="featuredProjects">
         <h2>VPS web applications</h2>
@@ -27,11 +27,11 @@
           </header>
           <div class="dialogBody">
             <h3>What's a VPS?</h3>
-            <p>My understanding is that a VPS is a virtual machine, typically running on a server in a data centre. More info can be found from sources such as <a href="https://en.wikipedia.org/wiki/Virtual_private_server" rel="noreferrer" target="_blank">Wikipedia</a>, <a href="https://aws.amazon.com/what-is/vps" rel="noreferrer" target="_blank">AWS</a>, and <a href="https://cloud.google.com/learn/what-is-a-virtual-private-server" rel="noreferrer" target="_blank">Google Cloud</a>.</p>
+            <p>A VPS is a virtual machine, typically running on a server in a data centre. More info can be found from sources such as <a href="https://en.wikipedia.org/wiki/Virtual_private_server" rel="noreferrer" target="_blank">Wikipedia</a>, <a href="https://aws.amazon.com/what-is/vps" rel="noreferrer" target="_blank">AWS</a>, and <a href="https://cloud.google.com/learn/what-is-a-virtual-private-server" rel="noreferrer" target="_blank">Google Cloud</a>.</p>
             <h3>Why a VPS?</h3>
-            <p>It was a lot cheaper than a PaaS such as Heroku or <a href="https://render.com" rel="noreferrer" target="_blank">Render</a>.</p>
+            <p>It was a lot cheaper than a PaaS such as <a href="https://www.heroku.com" rel="noreferrer" target="_blank">Heroku</a> or <a href="https://render.com" rel="noreferrer" target="_blank">Render</a>.</p>
             <h3>Why Debian?</h3>
-            <p>I chose Debian for my VPS because I'm already familiar with Debian-based Linux distros, having used Debian and Ubuntu in my spare time. I think Debian's server edition is meant to be more lightweight than Ubuntu's server edition, and Ubuntu puts some packages in their "universe" repository, which requires Ubuntu Pro for proper security coverage. Debian just seemed easier, and recent Debian releases have each had 3 years of security updates (before the LTS period), which is enough for me. In fact, I've already upgraded my VPS from Debian 12 to Debian 13, and the upgrade seemed to work just fine.</p>
+            <p>I chose Debian for my VPS because I'm already familiar with Debian-based Linux distros, having used Debian and Ubuntu in my spare time. I think Debian's server edition is meant to be more lightweight than Ubuntu's server edition, and Ubuntu puts some packages in their "universe" repository, which requires Ubuntu Pro for proper security coverage. Debian just seemed easier, and recent Debian releases have each had 3 years of security updates (before the LTS period), which is enough for me. In fact, I've already upgraded my VPS from Debian 12 to Debian 13, due to the former moving from standard support to LTS support, and the upgrade seemed to work just fine.</p>
             <h3>How is EmojiBoard being run?</h3>
             <p>The EmojiBoard web application is a single binary, produced by Go's compiler, and it is running as a systemd service. The front-end files are embedded into the binary. If you look in EmojiBoard's <a href="https://github.com/bt1k/emojiboard" rel="noreferrer" target="_blank">repo</a>, at the file "extra_prod.go", you'll see the front-end files embedded in a variable named <code>clientFiles</code> (unless I've changed the code by the time you're reading this).</p>
             <h3>How is Laravel Test being run?</h3>
@@ -69,7 +69,7 @@
             </ul>
           </section>
           <section class="project">
-            <h3><a href="https://laraveltest.bt1k.co.uk" target="_blank">Laravel Test</a></h3>
+            <h3><a href="https://laraveltest.bt1k.co.uk" rel="noreferrer" target="_blank">Laravel Test</a></h3>
             <p>Code: <a href="https://github.com/bt1k/laravel-test" rel="noreferrer" target="_blank">github.com/bt1k/laravel-test</a></p>
             <p class="techTags">
               <a href="https://www.php.net" rel="noreferrer" target="_blank">
@@ -89,10 +89,8 @@
         </div>
       </section>
       <section class="projectsSection" id="otherProjects">
-        <h2>Other web applications</h2>
-        <aside class="note">
-          <p>The two web applications below can each take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
-        </aside>
+        <h2>Sleeping web applications</h2>
+        <p>These two web applications can each take <b>around 1 minute to load</b>. I am using free hosting on <a href="https://render.com" rel="noreferrer" target="_blank">Render</a> which puts websites to sleep when inactive.</p>
         <div class="projectsContainer">
           <section class="project">
             <h3><a href="https://new-rails-blog.onrender.com" rel="noreferrer" target="_blank">New Rails Blog</a></h3>

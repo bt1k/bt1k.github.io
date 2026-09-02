@@ -40,7 +40,7 @@ body {
 
 button {
   align-self: stretch;
-  background-color: greenyellow;
+  background-color: yellow;
   border: 0;
   border-radius: 0;
   color: black;
@@ -116,7 +116,7 @@ main {
 }
 
 #jumbotron a {
-  color: skyblue;
+  color: aquamarine;
 }
 
 #jumbotron h1 {
@@ -171,8 +171,7 @@ main {
 }
 
 .note {
-  background-color: yellow;
-  border: 1px solid var(--border-colour);
+  background-color: lightgrey;
   color: black;
   padding: 1rem;
 }
