@@ -17,7 +17,7 @@
         <p>All web applications mentioned on this page were made by me as learning exercises. They're not intended to be particularly useful to ordinary people.</p>
       </aside>
       <section class="projectsSection" id="featuredProjects">
-        <h2>VPS web applications</h2>
+        <h2>Featured web applications</h2>
         <p>I have deployed these two web applications on a VPS (virtual private server), which is running Debian GNU/Linux.</p>
         <button id="vpsReadMore" class="dialogButton" disabled>Read more</button>
         <dialog aria-labelledby="vpsDialogTitle" id="vpsDialog">
@@ -65,7 +65,7 @@
             <ul>
               <li>Rate limiting to reduce server load in the event of many requests.</li>
               <li>Database check constraint to ensure only certain emojis can be submitted.</li>
-              <li>Database trigger function to ensure that a maximum of 10 emoji posts are in the database at any time (to prevent unlimited growth of database size).</li>
+              <li>Database trigger function to ensure that a maximum of 10 emoji posts are in the database at any time, to prevent unlimited growth of database size.</li>
             </ul>
           </section>
           <section class="project">
@@ -82,8 +82,8 @@
             <p>Laravel Test allows users to submit short text messages, which are shown publicly. It uses a PostgreSQL database. Features include:</p>
             <ul>
               <li>Data validation, so that only certain text inputs will be saved.</li>
-              <li>HTTP DELETE requests are sent to the back-end by buttons used to delete posts.</li>
-              <li>New posts can't be saved if at least 10 posts are already saved.</li>
+              <li>Each post has a "delete" button which sends an HTTP DELETE request to the back-end.</li>
+              <li>New posts can't be saved if at least 10 posts are already saved, so that the database can't grow infinitely in size.</li>
             </ul>
           </section>
         </div>
