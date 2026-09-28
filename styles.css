@@ -1,6 +1,11 @@
 @font-face {
+  font-family: 'Kode Mono';
+  src: url('fonts/KodeMono-VariableFont_wght.ttf');
+}
+
+@font-face {
   font-family: 'Roboto';
-  src: url('Roboto-VariableFont_wdth,wght.ttf');
+  src: url('fonts/Roboto-VariableFont_wdth,wght.ttf');
 }
 
 :root {
@@ -78,7 +83,9 @@ dialog[open] a {
 }
 
 h1 {
+  font-family: 'Kode Mono', monospace;
   font-size: 5rem;
+  font-weight: 700;
 }
 
 h2 {
@@ -87,6 +94,11 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+}
+
+hr {
+  border: 1px solid white;
+  width: 100%;
 }
 
 main {
@@ -124,8 +136,12 @@ main {
 }
 
 #jumbotron p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
+}
+
+#jumbotron #pageLede {
+  font-size: 2rem;
 }
 
 #otherProjects {
@@ -298,6 +314,12 @@ main {
   display: block;
   font-weight: bold;
   padding: 0.5rem;
+}
+
+@media (min-width: 30rem) {
+  .onlyMobile {
+    display: none;
+  }
 }
 
 @media (min-width: 60rem) {
